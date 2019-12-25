@@ -80,5 +80,6 @@ function getDeleteBtnListner(item) {
     item.remove();
     //remove from finished list
     item.domNode.parentNode.removeChild(item.domNode);
+    item.finish();
   }
 }

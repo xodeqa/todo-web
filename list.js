@@ -30,6 +30,12 @@ function TodoView(myList, finishedListView) {
 
 TodoView.prototype.bind = function() {
   $("button-add-item").addEventListener('click', _bind(this.addBtnListner, this));
+  $("input-content").addEventListener('keydown', function (evt) {
+    var keyCode = evt.keyCode || evt.which;
+    if (keyCode == '13') {
+      $("button-add-item").click();
+    }
+  });
   $("button-return").addEventListener('click', _bind(this.toggleView, this));
   $("button-view-finished").addEventListener('click', _bind(this.toggleView, this));
 }
